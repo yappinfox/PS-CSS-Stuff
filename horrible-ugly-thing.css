@@ -1,0 +1,98 @@
+@-moz-document domain("pluralspace.app") {
+a.block > div.justify-center.flex > div.relative > div.flex.items-center.justify-center, /* main member list */
+    a.relative > div.relative > div.flex.items-center.justify-center, /* compact */
+    article.relative.flex:has(a.flex) > div.relative > div.flex.items-center.justify-center, /* list */
+    /* address the new display types. elephant emoji */
+    div > div.justify-between > div.relative > div.flex,
+    /* alter's profile */
+    div > div.flex.items-center,
+    /* sys insights */
+    div.overflow-hidden > header.flex ~ div > ul > li > a.flex.items-center,
+    /* relationship list AND front history */
+    section.flex > div.overflow-y-auto > div.flex > div.shrink-0,
+    /* chat avatars */
+    div.grid.grid-cols-2 > div.group.flex > span.outline-none > button[type="button"].relative > div.flex.items-center.justify-center,
+    /* fronting dashboard */
+    section.border.border-border > header ~ div.grid > div.group.flex > div.relative > a > div.flex
+    /* friended systems: fronting dashboard */
+    {
+        border-radius: 0px;
+        img {
+            -webkit-mask-size: 100%;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            border-radius: 0px;
+            box-shadow: none;
+            background-color: transparent !important;
+
+            -webkit-mask-image: var(--url);
+            --url: url(https://file.garden/ZpvtPKL0r1V-kRES/pfpbase1.png); /* use 'unset' instead of 'url()' as a rule here if you do not want a sys-wide mask */
+        }
+    }
+
+    a.block > div.justify-center.flex > div.relative > div.flex.items-center.justify-center, /* member list */
+    a.relative > div.relative > div.flex.items-center.justify-center, /* compact */
+    article.relative.flex:has(a.flex) > div.relative > div.flex.items-center.justify-center, /* list */
+    /* address the new display types. elephant emoji */
+    div > div.justify-between > div.relative > div.flex,
+    /* alter's profile */
+    section.flex > div.overflow-y-auto > div.flex > div.shrink-0,
+    /* chat avatars */
+    div.grid.grid-cols-2 > div.group.flex > span.outline-none > button[type="button"].relative > div.flex.items-center.justify-center,
+    /* fronting dashboard */
+    section.border.border-border > header ~ div.grid > div.group.flex > div.relative > a > div.flex
+    /* friended systems: fronting dashboard */
+    {
+        background-color: transparent !important; /* override element.style */
+        filter: /* front border should conform to mask-image */
+            drop-shadow(2px 2px 1px var(--tw-ring-color))
+            drop-shadow(2px -2px 1px var(--tw-ring-color))
+            drop-shadow(-2px 2px 1px var(--tw-ring-color))
+            drop-shadow(-2px -2px 1px var(--tw-ring-color));
+        --tw-ring-shadow: 0px;
+        &:not([style*="--tw-ring-color"]) { /* if not at front... */
+            --tw-ring-color: color-mix(in oklab, var(--color-neutral-800) 80%, transparent 60%); /* if you want other colors, you can poke around in your element inspector for more colors you can use or set your own. */
+        }
+    }
+
+
+@font-face {
+    font-family: "HoneyBee";
+  src: url(https://file.garden/ZpvtPKL0r1V-kRES/CODE2001.TTF)
+}
+
+@font-face {
+    font-family: "Others";
+  src: url(https://file.garden/ZpvtPKL0r1V-kRES/CODE2000.TTF)
+}
+
+@layer theme {
+  :root, :host {
+    --font-sans: "Honeybee", "Others", "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    
+    div.flex.flex-col > div:has(h1.font-display) > p {
+        visibility: hidden;
+        &:before {
+            content: "— The Filing Cabinet of the Novae Archives."; /* Change this to anything you want. */
+            visibility: visible;
+            position: absolute;
+            font-family: "Cinzel"; /* You will need to import fonts on the top of your stylesheet if you want to use fonts not installed in your device. */
+            font-weight: bold; /* Feel free to change this. */
+        }
+    }
+    h1.font-display {
+        visibility: hidden;
+        &:before {
+            content: "Luna lucet omnibus"; /* Change this to anything you want. */
+            visibility: visible;
+            position: absolute;
+            font-family: "Others", "Font Awesome 7 Duotone"; /* You will need to import fonts on the top of your stylesheet if you want to use fonts not installed in your device. */
+            font-weight: bold; /* Feel free to change this. */
+            font-style: italic; /* Feel free to change this. */
+        }
+        & span {
+            display: none;
+        }
+}
+}
